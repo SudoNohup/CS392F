@@ -1,5 +1,5 @@
 #set($MARKER="//----")
-$(MARKER)Current.java
+${MARKER}Current.java
 package myfsm;
 
 class Current {
@@ -15,10 +15,9 @@ class Current {
 ${MARKER}${node.name}.java
 package myfsm;
 
-class $node.name extends Current {
+class ${node.name} extends Current {
 #foreach($transition in $transitionS)
-  #if ($transition.startsAt == $transition.name)
-
+  #if (${transition.startsAt} == ${node.nodeid})
   public void goto${transition.endsAt}() {
     System.out.println("going to ${node.name}");
     current = new ${transition.endsAt}();
