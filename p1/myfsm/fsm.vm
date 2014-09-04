@@ -1,0 +1,28 @@
+#set($MARKER="//----")
+${MARKER}Current.java
+package myfsm;
+
+class Current {
+  public static Current current = new Start();
+#foreach($node in $nodeS)
+  public void goto${node.name}() {
+    System.out.println("ignoring transition to ${node.name}");
+  }
+#end
+}
+
+#foreach($node in $nodeS)
+${MARKER}${node.name}.java
+package myfsm;
+
+class ${node.name} extends Current {
+#foreach($transition in $transitionS)
+  #if (${transition.startsAt} == ${node.nodeid})
+  public void goto${transition.endsAt}() {
+    System.out.println("going to ${node.name}");
+    current = new ${transition.endsAt}();
+  }
+  #end
+#end
+}
+#end
