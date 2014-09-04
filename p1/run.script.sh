@@ -17,7 +17,7 @@ $javac
 
 java="java app"
 
-echo "java app"
+echo $java
 echo The execution result of part 1:
 echo
 $java
