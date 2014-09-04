@@ -1,0 +1,100 @@
+#set($MARKER="//----")
+
+${MARKER}fsm.java
+
+package myfsm;
+
+public class fsm{
+
+  private State currentState;
+  public fsm()
+  {
+#foreach($node in $nodeS)
+#if(${node.type}=="start")
+      currentState=new ${node.nodeid}();
+#end
+#end
+  }
+
+#foreach($node in $nodeS)
+  public void goto${node.name}()
+  {
+       State tmpState=currentState.goto${node.name}();
+       if(tmpState!=null)
+       {
+	    System.out.println("go to ${node.name}");
+            currentState=tmpState;
+       }else
+       {
+	    System.out.println("ignoring transition to ${node.name}");
+       }
+  }    
+#end
+
+  public String getName()
+  {
+     return currentState.getName();
+  }
+}
+
+
+${MARKER}State.java
+
+package myfsm;
+
+public interface State
+{
+#foreach($node in $nodeS)
+    State goto${node.name}();
+#end
+    String getName();
+}
+
+
+
+#foreach($node in $nodeS)
+${MARKER}${node.nodeid}.java
+
+package myfsm;
+
+public class ${node.nodeid} implements State
+{
+    private String name;
+    private String type;
+
+    public ${node.nodeid}()
+    {
+        name="${node.name}";
+        type="${node.type}";
+    }
+#foreach($tmpnode in $nodeS)
+    public State goto${tmpnode.name}()
+    {
+#set($hastrans=0)
+#foreach($transition in $transitionS)
+#if(${node.nodeid}==${transition.startsAt})
+#if(${tmpnode.nodeid}==${transition.endsAt})
+#set($hastrans=1)
+#end
+#end
+#end
+#if(${hastrans}==1)
+        return new ${tmpnode.nodeid}();
+#else
+        return null;
+#end
+    }
+
+
+#end
+
+
+    public String getName()
+    {
+        return name;
+    }
+
+
+
+}
+#end
