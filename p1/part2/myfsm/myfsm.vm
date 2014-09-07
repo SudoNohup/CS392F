@@ -1,0 +1,37 @@
+#set($MARKER="//----")
+${MARKER}fsm.java
+package myfsm;
+
+public class fsm {
+  public enum states {#set($comma="")#foreach($node in $nodeS)$comma ${node.name}#set($comma=",")#end }
+#foreach($node in $nodeS)
+  #if(${node.type}=="start")
+  states currentState = states.${node.name};
+  #end
+#end
+  public String getName() { return currentState.toString(); }
+#foreach($node in $nodeS)
+  public void goto${node.name}() {  
+    switch(currentState) {
+  #set ($transFlag=0)
+  #foreach($transition in $transitionS)
+    #if (${transition.endsAt} == ${node.nodeid})
+	  #set ($transFlag=1)
+	  #foreach($node in $nodeS)
+	    #if (${node.nodeid} == ${transition.startsAt})
+    case ${node.name} : 
+		#end
+	  #end
+	#end
+  #end
+  #if (${transFlag} == 1)
+      System.out.println("going to ${node.name}");
+      currentState = states.${node.name};
+      break;
+  #end
+    default : 
+      System.out.println("ignoring transition to ${node.name}");
+	}
+  }
+#end
+}
