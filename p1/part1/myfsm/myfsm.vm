@@ -10,9 +10,9 @@ public class fsm{
   public fsm()
   {
 #foreach($node in $nodeS)
-#if(${node.type}=="start")
+  #if(${node.type}=="start")
       currentState=new ${node.nodeid}();
-#end
+  #end
 #end
   }
 
@@ -71,18 +71,18 @@ public class ${node.nodeid} implements State
     public State goto${tmpnode.name}()
     {
 #set($hastrans=0)
-#foreach($transition in $transitionS)
-#if(${node.nodeid}==${transition.startsAt})
-#if(${tmpnode.nodeid}==${transition.endsAt})
-#set($hastrans=1)
-#end
-#end
-#end
-#if(${hastrans}==1)
+  #foreach($transition in $transitionS)
+    #if(${node.nodeid}==${transition.startsAt})
+      #if(${tmpnode.nodeid}==${transition.endsAt})
+        #set($hastrans=1)
+      #end
+    #end
+  #end
+  #if(${hastrans}==1)
         return new ${tmpnode.nodeid}();
-#else
+  #else
         return null;
-#end
+  #end
     }
 
 
