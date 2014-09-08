@@ -4,9 +4,9 @@ import myfsm.*;
 public class app {
 
     public static void main(String[] args) {
-       paces( new fsm() );
        System.out.println("----");
        paces( new fsm() );
+       System.out.println("----");
     }
 
     public static void paces( fsm f ) {
