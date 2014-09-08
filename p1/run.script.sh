@@ -28,7 +28,7 @@ function exePart1 {
 
 function exePart2 {
     echo "Start executing part 2"
-    cd part1/myfsm
+    cd part2/myfsm
     M2T="java CatCore.vm2t.Main fsm.pl myfsm.vm"
     echo $M2T
     $M2T
