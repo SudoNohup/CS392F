@@ -52,7 +52,53 @@ function exePart2 {
 }
 
 function exePart3 {
-    echo "part 3 To be implemented"
+    echo "Start executing part 3 with .vm in part 1"
+    cd part3/myfsm
+    M2T="java CatCore.vm2t.Main Chol_verify.pl myfsm1.vm"
+    echo $M2T
+    $M2T
+
+    cd ..
+
+    javac="javac app.java"
+    echo $javac
+    $javac
+    java="java app"
+    echo $java
+
+    echo "The execution result of part 3 with .vm in part 1:"
+    echo
+    $java
+	
+    cd ..
+
+    echo "---------------------------------"
+    echo
+	
+	
+	echo "Start executing part 3 with .vm in part 2"
+    cd part3/myfsm
+    M2T="java CatCore.vm2t.Main Chol_verify.pl myfsm2.vm"
+    echo $M2T
+    $M2T
+
+    cd ..
+
+    javac="javac app.java"
+    echo $javac
+    $javac
+    java="java app"
+    echo $java
+
+    echo "The execution result of part 3 with .vm in part 2:"
+    echo
+    $java
+	
+    cd ..
+
+    echo "---------------------------------"
+    echo
+
 
 }
 
@@ -72,5 +118,4 @@ else
         let "index=${index}+1"
     done
 fi
-
 

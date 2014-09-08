@@ -1,0 +1,8 @@
+Please execute the bash-script in Cygwin.
+1. Make the the script executable
+chmod u+x ./run.script.sh
+2. Run the script
+./run.script.sh [the parts you want to run(optional)]
+e.g
+./run.script.sh ---- run all parts (Part 1,2&3)
+./run.script.sh 3 1 ---- run part 3 and part 1

@@ -1,11 +1,9 @@
 #set($MARKER="//----")
 
 ${MARKER}fsm.java
-
 package myfsm;
 
 public class fsm{
-
   private State currentState;
   public fsm()
   {
@@ -39,7 +37,6 @@ public class fsm{
 
 
 ${MARKER}State.java
-
 package myfsm;
 
 public interface State
@@ -50,11 +47,8 @@ public interface State
     String getName();
 }
 
-
-
 #foreach($node in $nodeS)
 ${MARKER}${node.nodeid}.java
-
 package myfsm;
 
 public class ${node.nodeid} implements State
@@ -67,34 +61,27 @@ public class ${node.nodeid} implements State
         name="${node.name}";
         type="${node.type}";
     }
-#foreach($tmpnode in $nodeS)
+  #foreach($tmpnode in $nodeS)
     public State goto${tmpnode.name}()
     {
-#set($hastrans=0)
-  #foreach($transition in $transitionS)
-    #if(${node.nodeid}==${transition.startsAt})
-      #if(${tmpnode.nodeid}==${transition.endsAt})
-        #set($hastrans=1)
+    #set($hastrans=0)
+    #foreach($transition in $transitionS)
+      #if(${node.nodeid}==${transition.startsAt})
+        #if(${tmpnode.nodeid}==${transition.endsAt})
+          #set($hastrans=1)
+        #end
       #end
     #end
-  #end
-  #if(${hastrans}==1)
+    #if(${hastrans}==1)
         return new ${tmpnode.nodeid}();
-  #else
+    #else
         return null;
-  #end
+    #end
     }
-
-
-#end
-
-
+  #end
     public String getName()
     {
         return name;
     }
-
-
-
 }
 #end
