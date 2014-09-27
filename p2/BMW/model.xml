@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-	<featureModel chosenLayoutAlgorithm="0">
+	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
-			<and abstract="true" coordinates="409, 33" mandatory="true" name="BMW_Series2">
-				<alt coordinates="228, 101" mandatory="true" name="Body">
-					<feature coordinates="-227, 214" mandatory="true" name="Sedan"/>
-					<feature coordinates="-179, 212" mandatory="true" name="Coupe"/>
-					<feature coordinates="-129, 212" mandatory="true" name="GranCoupe"/>
-					<feature coordinates="-53, 211" mandatory="true" name="Convertible"/>
-					<feature coordinates="17, 212" mandatory="true" name="SportsActivityVehicle"/>
-					<feature coordinates="133, 212" mandatory="true" name="Roadster"/>
-					<feature coordinates="193, 213" mandatory="true" name="SportsActivityCoupe"/>
-					<feature coordinates="308, 214" mandatory="true" name="SportsWagon"/>
-					<feature coordinates="389, 214" mandatory="true" name="GranTurism"/>
+			<and abstract="true" mandatory="true" name="BMW_Series2">
+				<alt mandatory="true" name="Body">
+					<feature mandatory="true" name="Sedan"/>
+					<feature mandatory="true" name="Coupe"/>
+					<feature mandatory="true" name="GranCoupe"/>
+					<feature mandatory="true" name="Convertible"/>
+					<feature mandatory="true" name="SportsActivityVehicle"/>
+					<feature mandatory="true" name="Roadster"/>
+					<feature mandatory="true" name="SportsActivityCoupe"/>
+					<feature mandatory="true" name="SportsWagon"/>
+					<feature mandatory="true" name="GranTurism"/>
 				</alt>
-				<alt coordinates="518, 109" mandatory="true" name="DriveTrain">
-					<feature coordinates="484, 213" mandatory="true" name="xDrive"/>
-					<feature coordinates="536, 212" mandatory="true" name="RearWheel"/>
+				<alt mandatory="true" name="DriveTrain">
+					<feature mandatory="true" name="xDrive"/>
+					<feature mandatory="true" name="RearWheel"/>
 				</alt>
-				<alt coordinates="617, 110" mandatory="true" name="FuelEfficiency">
-					<feature coordinates="610, 213" mandatory="true" name="Hybrid"/>
-					<feature coordinates="659, 213" mandatory="true" name="Gasoline"/>
-					<feature coordinates="719, 213" mandatory="true" name="Electric"/>
-					<feature coordinates="772, 213" mandatory="true" name="Diesel"/>
+				<alt mandatory="true" name="Fuel">
+					<feature mandatory="true" name="Hybrid"/>
+					<feature mandatory="true" name="Gasoline"/>
+					<feature mandatory="true" name="Electric"/>
+					<feature mandatory="true" name="Diesel"/>
+				</alt>
+				<alt mandatory="true" name="MSRP">
+					<feature mandatory="true" name="$32100"/>
+					<feature mandatory="true" name="$33900"/>
+					<feature mandatory="true" name="$43100"/>
+					<feature mandatory="true" name="$44900"/>
+				</alt>
+				<alt mandatory="true" name="HorsePower">
+					<feature mandatory="true" name="HP240"/>
+					<feature mandatory="true" name="HP320"/>
+				</alt>
+				<alt mandatory="true" name="FuelEfficiency">
+					<feature mandatory="true" name="MPG30"/>
+					<feature mandatory="true" name="MPG32"/>
+					<feature mandatory="true" name="MPG35"/>
+					<feature mandatory="true" name="MPG36"/>
 				</alt>
 			</and>
 		</struct>
