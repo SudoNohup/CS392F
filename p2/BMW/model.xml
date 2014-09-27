@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="0">
+		<struct>
+			<and abstract="true" coordinates="409, 33" mandatory="true" name="BMW_Series2">
+				<alt coordinates="228, 101" mandatory="true" name="Body">
+					<feature coordinates="-227, 214" mandatory="true" name="Sedan"/>
+					<feature coordinates="-179, 212" mandatory="true" name="Coupe"/>
+					<feature coordinates="-129, 212" mandatory="true" name="GranCoupe"/>
+					<feature coordinates="-53, 211" mandatory="true" name="Convertible"/>
+					<feature coordinates="17, 212" mandatory="true" name="SportsActivityVehicle"/>
+					<feature coordinates="133, 212" mandatory="true" name="Roadster"/>
+					<feature coordinates="193, 213" mandatory="true" name="SportsActivityCoupe"/>
+					<feature coordinates="308, 214" mandatory="true" name="SportsWagon"/>
+					<feature coordinates="389, 214" mandatory="true" name="GranTurism"/>
+				</alt>
+				<alt coordinates="518, 109" mandatory="true" name="DriveTrain">
+					<feature coordinates="484, 213" mandatory="true" name="xDrive"/>
+					<feature coordinates="536, 212" mandatory="true" name="RearWheel"/>
+				</alt>
+				<alt coordinates="617, 110" mandatory="true" name="FuelEfficiency">
+					<feature coordinates="610, 213" mandatory="true" name="Hybrid"/>
+					<feature coordinates="659, 213" mandatory="true" name="Gasoline"/>
+					<feature coordinates="719, 213" mandatory="true" name="Electric"/>
+					<feature coordinates="772, 213" mandatory="true" name="Diesel"/>
+				</alt>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
