@@ -45,9 +45,6 @@ public class Main {
         String outputPrologFileName = args[1];
         try {
             ps = new PrintStream(new File(outputPrologFileName));
-            //File epsf = new File(CatCore.Main.errMsgFile);
-            //epsf.delete();
-            //eps = new PrintStream(epsf);
 			eps = new PrintStream(new File("error.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -69,8 +66,8 @@ public class Main {
 			ps.format(":- discontiguous table/2.\n\n");
 			ps.format("%cdbase(fsm,[node,transition]).\n\n", '%');
 
-            extractDomains(voidList);
-            extractArrows(voidList);
+            extractNodes(voidList);
+            extractTransitions(voidList);
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             eps.print(e.getMessage());
@@ -80,12 +77,9 @@ public class Main {
         ps.close();
     }
 
-    public static void extractArrows(NodeList voidList) {
+    public static void extractTransitions(NodeList voidList) {
         int counter = 0;
-		
-		System.out.println("Come into extractArrows\n");
         // Step 1: print out arrow table definition
-		
 		ps.format("%ctable(transition,[transid,startsAt,endsAt]).\n", '%');
 
         // Step 2: let's plow through all of the <void> nodes to find <void method="connect">
@@ -108,27 +102,20 @@ public class Main {
             }
             String start = ((Element) objects.item(1)).getAttribute("idref");
             String end = ((Element) objects.item(2)).getAttribute("idref");
-			
-			System.out.println("Connect:" + start + " " + end + "\n");
 
             // Step 2.2: output an transition tuple -- unravel arrowName if it is compound
             counter++;
 			ps.format("transition(t%d, %s, %s).\n", counter, start, end);
 
         }
-		
         if (counter == 0) {
             ps.format(":- dynamic transition/3.\n");
         }
         ps.format("\n");
-
     }
 
-    public static void extractDomains(NodeList voidList) {
-        String domainName, extName, x, y;
-        boolean noDomains = true;
-
-		System.out.println("Come into extractDomains\n");
+    public static void extractNodes(NodeList voidList) {
+        boolean noNodes = true;
         // Step 1:  printout table declaration	
 		ps.format("%ctable(node,[nodeid,name,type].\n", '%');
 		
@@ -154,14 +141,11 @@ public class Main {
             {
                 continue;
             }
-            String id = eobject0.getAttribute("id");
+            String id = eobject0.getAttribute("id");	
 			
-			System.out.println("id: " + id + "\n");
-			
-			
-            // Step 2.1: Now that we know we are adding a domain, we have to get its listed name
+            // Step 2.2: Now that we know we are adding a domain, we have to get its listed name
             //           we find the first <string> node and extract its value.  That's the user-
-            //           given name for the domain (in string arrowName).
+            //           given name for the domain (in string nodeName).
 			String nodeName;
 			String[] parts;
 			String state;
@@ -177,17 +161,15 @@ public class Main {
                 nodeName = estrings0.getFirstChild().getNodeValue();
 			    state = "state";
 			}
-			System.out.println("nodeName:"+nodeName+"\n");
             nodeName = nodeName.replaceAll("\\r|\\n", "");
             
-            // Step 2.5: now print out the extracted domain tuple
-            noDomains = false;
+            // Step 2.3: now print out the result
+            noNodes = false;
             ps.format("node(%s, %s, %s).\n", id, nodeName, state);
         }
-        if (noDomains) {
+        if (noNodes) {
             ps.format(":- dynamic node/3.\n");
         }
         ps.format("\n");
     }
-	
 }
