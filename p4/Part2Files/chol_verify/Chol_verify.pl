@@ -18,8 +18,7 @@ transition(t3, StateNode2, StateNode0).
 transition(t4, StateNode1, StateNode2).
 transition(t5, StateNode1, StateNode3).
 transition(t6, StateNode3, StateNode1).
-transition(t7, StateNode3, StateNode3).
-transition(t8, StateNode3, StateNode3).
-transition(t9, StateNode2, StateNode2).
-transition(t10, StateNode0, CircularFinalStateNode0).
+transition(t7, StateNode2, StateNode2).
+transition(t8, StateNode0, CircularFinalStateNode0).
+transition(t9, StateNode3, StateNode3).
 

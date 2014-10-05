@@ -5,7 +5,7 @@
 
 %table(node,[nodeid,name,type].
 node(CircularInitialStateNode0, start, start).
-node(StateNode0, Loop, state).
+node(StateNode0, loop, state).
 node(CircularFinalStateNode0, stop, stop).
 
 %table(transition,[transid,startsAt,endsAt]).

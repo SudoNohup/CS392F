@@ -195,16 +195,6 @@
   </void>
   <void method="connect">
    <object class="com.horstmann.violet.StateTransitionEdge"/>
-   <object idref="StateNode3"/>
-   <object idref="StateNode3"/>
-  </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.StateTransitionEdge"/>
-   <object idref="StateNode3"/>
-   <object idref="StateNode3"/>
-  </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.StateTransitionEdge"/>
    <object idref="StateNode2"/>
    <object idref="StateNode2"/>
   </void>
@@ -212,6 +202,11 @@
    <object class="com.horstmann.violet.StateTransitionEdge"/>
    <object idref="StateNode0"/>
    <object idref="CircularFinalStateNode0"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.StateTransitionEdge"/>
+   <object idref="StateNode3"/>
+   <object idref="StateNode3"/>
   </void>
  </object>
 </java>

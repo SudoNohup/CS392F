@@ -28,7 +28,7 @@
    <object class="com.horstmann.violet.StateNode" id="StateNode0">
     <void property="name">
      <void property="text">
-      <string>Loop</string>
+      <string>loop</string>
      </void>
     </void>
    </object>
