@@ -2,7 +2,7 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="MyIterator">
-				<feature mandatory="true" name="Base"/>
+				<feature mandatory="true" name="base"/>
 				<feature name="dbl"/>
 				<feature name="remove"/>
 			</and>
