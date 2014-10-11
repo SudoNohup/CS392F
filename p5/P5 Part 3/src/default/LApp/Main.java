@@ -26,23 +26,15 @@ public  class  Main {
         // Step 4: print list out
         System.out.println("augmented list");
         mylist.print(System.out);
+        
+        reviseList();
 
-        // Step 5: remove added nodes
-        Entity[] ent = Entity.entArray2;
-        for (Iterator i = mylist.iterator(); 
-	       i.hasNext();) {
-            Entity x = (Entity) i.next();
-            for (int j = 0; j < ent.length; j++) {
-                if (ent[j] == x) {
-                    i.remove();
-                    break;
-                }
-            }
-        }
+    }
 
-        // Step 6: print remaining nodes
-        System.out.println("revised list");
-        mylist.print(System.out);
+	
+    
+    private static void reviseList()
+    {
     }
 
 	
