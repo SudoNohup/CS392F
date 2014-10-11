@@ -3,7 +3,7 @@ package LApp;
 import java.util.Iterator; 
 import FList.*; 
 
-public  class  Main {
+public   class  Main {
 	
 
     static MyList mylist;
@@ -26,8 +26,16 @@ public  class  Main {
         // Step 4: print list out
         System.out.println("augmented list");
         mylist.print(System.out);
+        
+        reviseList();
 
-        // Step 5: remove added nodes
+    }
+
+	
+
+    private static void reviseList  ()
+    {
+    	 // Step 5: remove added nodes
         Entity[] ent = Entity.entArray2;
         for (Iterator i = mylist.iterator(); 
 	       i.hasNext();) {

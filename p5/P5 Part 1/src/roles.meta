@@ -69,6 +69,16 @@
 		},
 		"toString": {
 			"remove": "toString"
+		},
+		"main": {
+			"base": "main__wrappee__base",
+			"remove": "main"
+		},
+		"addArray": {
+			"remove": "addArray"
+		},
+		"reviseList": {
+			"remove": "reviseList"
 		}
 	}
 
