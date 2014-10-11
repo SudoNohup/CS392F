@@ -1,22 +1,19 @@
 package FList; 
 
-import LApp.Entity; 
 
-public   class  MyNode {
+public  class  MyNode {
 	
 
-    Entity elem;
+    Object elem;
 
 	
     MyNode right;
 
 	
 
-    public MyNode  (Entity elem) {
+    public MyNode(Object elem) {
         this.elem = elem;
         right = null;
-    
-        left=null;
     }
 
 	
@@ -24,10 +21,6 @@ public   class  MyNode {
     public String toString() {
         return elem.toString();
     }
-
-	
-
-    MyNode left;
 
 
 }
