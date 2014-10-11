@@ -5,10 +5,10 @@ import LApp.Entity;
 public   class  MyNode {
 	
 
-    Entity elem  ;
+    Entity elem;
 
 	
-    MyNode right  ;
+    MyNode right;
 
 	
 
@@ -17,20 +17,17 @@ public   class  MyNode {
         right = null;
     
         left=null;
-    
-        this.elem = elem;
-        right = null;
-        left = null;
     }
 
 	
 
-    public String toString  () {
+    public String toString() {
         return elem.toString();
     }
 
 	
-    MyNode left  ;
+
+    MyNode left;
 
 
 }
