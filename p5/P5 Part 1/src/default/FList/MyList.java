@@ -27,7 +27,7 @@ public   class  MyList  implements Iterable {
 
 	
 
-     private void  insert__wrappee__Base  (MyNode n) {
+     private void  insert__wrappee__base  (MyNode n) {
         n.right = head;
         head = n;
     }
@@ -36,7 +36,7 @@ public   class  MyList  implements Iterable {
 
     void insert(MyNode n)
     {
-    	insert__wrappee__Base(n);
+    	insert__wrappee__base(n);
     	n.left = null;
         if (n.right != null) {
            n.right.left = n;
@@ -61,13 +61,13 @@ public   class  MyList  implements Iterable {
 
 	
 
-     private void  delete__wrappee__Base  (MyNode n) {
+     private void  delete__wrappee__base  (MyNode n) {
     }
 
 	
 
     public void delete(MyNode n) {
-    	delete__wrappee__Base(n);
+    	delete__wrappee__base(n);
         if (n.left != null) {
             n.left.right = n.right;
         } else {
