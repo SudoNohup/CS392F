@@ -1,7 +1,8 @@
 package FList; 
 
+import LApp.Entity; 
 
-public  class  MyNode {
+public   class  MyNode {
 	
 
     Object elem;
@@ -20,6 +21,16 @@ public  class  MyNode {
 
     public String toString() {
         return elem.toString();
+    }
+
+	
+
+    MyNode left;
+
+	
+
+    public MyNode(Entity elem) {
+        left=null;
     }
 
 

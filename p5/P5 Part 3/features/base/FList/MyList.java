@@ -14,7 +14,7 @@ public class MyList implements Iterable {
         tail = null;
     }
 
-    public void insert(Entity elem) {
+    public void insert(Object elem) {
         insert(new MyNode(elem));
     }
 
@@ -30,7 +30,7 @@ public class MyList implements Iterable {
     public void print(PrintStream out) {
         for (Iterator eIterator = iterator(); 
 		eIterator.hasNext();) {
-            Entity e = (Entity) eIterator.next();
+            Object e = eIterator.next();
             out.println(e);
         }
     }
