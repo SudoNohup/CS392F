@@ -1,0 +1,113 @@
+{
+	"features" : [
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list",
+		"base",
+		"dbl",
+		"ordered_list"
+	],
+	"roles": {
+		"insert": {
+			"base": "insert__wrappee__base",
+			"dbl": "insert",
+			"ordered_list": "insert"
+		},
+		"initialization": {
+			"base": "initialization__wrappee__base",
+			"dbl": "initialization"
+		},
+		"remove": {
+			"remove": "remove",
+			"delete_flag": "remove"
+		},
+		"reviseList": {
+			"remove": "reviseList",
+			"delete_flag": "reviseList"
+		},
+		"addArray": {
+			"ordered_list": "addArray"
+		},
+		"setUp": {
+			"ordered_list": "setUp"
+		},
+		"testMain": {
+			"ordered_list": "testMain"
+		},
+		"addLeftLink": {
+			"dbl": "addLeftLink"
+		},
+		"hasNext": {
+			"delete_flag": "hasNext"
+		},
+		"next": {
+			"delete_flag": "next"
+		},
+		"delete": {
+			"base": "delete__wrappee__base",
+			"delete_flag": "delete",
+			"remove": "delete__wrappee__base"
+		},
+		"testInsert": {
+			"ordered_list": "testInsert"
+		},
+		"testRemove": {
+			"ordered_list": "testRemove"
+		},
+		"testDetele": {
+			"ordered_list": "testDetele"
+		},
+		"isOrdered": {
+			"ordered_list": "isOrdered"
+		}
+	}
+
+}
