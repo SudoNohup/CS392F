@@ -15,4 +15,16 @@ public class MyNode {
     public String toString() {
         return elem.toString();
     }
+    
+    
+    /*
+     * The following method is for testing
+     */
+    
+    public MyNode getRight()
+    {
+    	return right;
+    }
+    
+    
 }

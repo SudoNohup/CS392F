@@ -37,4 +37,12 @@ public class MyList implements Iterable {
 
     public void delete(MyNode n) {
     }
+    
+    /*
+     * Use for JUnit testing
+     */
+    public MyNode getHead()
+    {
+    	return head;
+    }
 }

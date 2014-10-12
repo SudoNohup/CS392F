@@ -80,5 +80,15 @@ public   class  MyList  implements Iterable {
         }
     }
 
+	
+    
+    /*
+     * Use for JUnit testing
+     */
+    public MyNode getHead()
+    {
+    	return head;
+    }
+
 
 }

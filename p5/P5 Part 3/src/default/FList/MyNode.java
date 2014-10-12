@@ -24,6 +24,18 @@ public   class  MyNode {
     }
 
 	
+    
+    
+    /*
+     * The following method is for testing
+     */
+    
+    public MyNode getRight()
+    {
+    	return right;
+    }
+
+	
 
     MyNode left;
 
@@ -31,6 +43,16 @@ public   class  MyNode {
 
     public MyNode(Entity elem) {
         left=null;
+    }
+
+	
+    
+    /*
+     * This method is for JUnit testing
+     */
+    public MyNode getLeft()
+    {
+    	return left;
     }
 
 

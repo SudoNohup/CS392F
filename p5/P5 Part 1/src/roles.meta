@@ -60,6 +60,23 @@
 			"base": "insert__wrappee__base",
 			"dbl": "insert"
 		},
+		"setUp": {
+			"dbl": "setUp",
+			"base": "setUp__wrappee__base",
+			"remove": "setUp"
+		},
+		"testCreation": {
+			"dbl": "testCreation",
+			"remove": "testCreation"
+		},
+		"testRight": {
+			"dbl": "testRight",
+			"base": "testRight__wrappee__base"
+		},
+		"initialization": {
+			"base": "initialization__wrappee__base",
+			"dbl": "initialization"
+		},
 		"remove": {
 			"remove": "remove"
 		},
@@ -67,18 +84,18 @@
 			"base": "delete__wrappee__base",
 			"remove": "delete"
 		},
-		"toString": {
-			"remove": "toString"
+		"testInsert": {
+			"remove": "testInsert"
 		},
-		"main": {
-			"base": "main__wrappee__base",
-			"remove": "main"
-		},
-		"addArray": {
-			"remove": "addArray"
+		"testIterator": {
+			"remove": "testIterator"
 		},
 		"reviseList": {
 			"remove": "reviseList"
+		},
+		"printMe": {
+			"Base": "printMe__wrappee__Base",
+			"Beautiful": "printMe"
 		}
 	}
 

@@ -26,8 +26,30 @@ public   class  MyNode {
     }
 
 	
+    
+    
+    /*
+     * The following method is for testing
+     */
+    
+    public MyNode getRight()
+    {
+    	return right;
+    }
+
+	
 
     MyNode left;
+
+	
+    
+    /*
+     * This method is for JUnit testing
+     */
+    public MyNode getLeft()
+    {
+    	return left;
+    }
 
 
 }

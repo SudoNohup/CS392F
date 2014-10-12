@@ -9,5 +9,13 @@ public class MyNode {
     public MyNode(Entity elem) {
         left=null;
     }
+    
+    /*
+     * This method is for JUnit testing
+     */
+    public MyNode getLeft()
+    {
+    	return left;
+    }
 
 }
