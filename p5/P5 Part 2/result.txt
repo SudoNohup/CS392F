@@ -1,6 +1,0 @@
-(Don, 60)
-(Steve, 90)
-(Don, 60)
-(Haggis, 1)
-(Kelsey, 25)
-(Steve, 90)
