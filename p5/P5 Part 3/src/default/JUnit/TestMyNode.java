@@ -6,15 +6,14 @@ import static org.junit.Assert.*;
 import org.junit.Before; 
 import org.junit.Test; 
 import FList.*; 
-import LApp.Entity; 
 
 public   class  TestMyNode {
 	
 	
-	MyList myList;
+	MyList<Integer> myList;
 
 	
-	MyNode node;
+	MyNode<Integer> node;
 
 	
 	
@@ -28,8 +27,8 @@ public   class  TestMyNode {
 	 private void  initialization__wrappee__base  ()
 	{
 		myList=new MyList();
-		myList.insert(new Entity("Somebody",100));
-		myList.insert(new Entity("Someone",50));
+		myList.insert(new Integer(100));
+		myList.insert(new Integer(50));
 		node=myList.getHead();
 	}
 
@@ -39,7 +38,7 @@ public   class  TestMyNode {
 	private void initialization()
 	{
 		initialization__wrappee__base();
-		myList.insert(new Entity("ThirdParty",80));
+		myList.insert(new Integer(80));
 		middle=myList.getHead().getRight();
 	}
 
@@ -47,7 +46,7 @@ public   class  TestMyNode {
 
 	@Test
 	public void testCreation() { 		
-		assertEquals("(Someone, 50)",node.toString());
+		assertEquals(new Integer(50),node.getElem());
 	}
 
 	
@@ -55,12 +54,12 @@ public   class  TestMyNode {
 	@Test
 	public void testRight()
 	{
-		assertEquals("(Somebody, 100)", node.getRight().toString());
+		assertEquals(new Integer(100), node.getRight().getElem());
 	}
 
 	
 	
-	MyNode middle;
+	MyNode<Integer> middle;
 
 	
 
@@ -69,8 +68,8 @@ public   class  TestMyNode {
 	@Test
 	public void testLeft()
 	{
-		assertEquals("(ThirdParty, 80)",middle.getLeft().toString());
-		assertEquals("(Someone, 50)",middle.getRight().getLeft().toString());
+		assertEquals(new Integer(80),middle.getLeft().getElem());
+		assertEquals(new Integer(50),middle.getRight().getLeft().getElem());
 	}
 
 

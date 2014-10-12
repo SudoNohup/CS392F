@@ -61,13 +61,18 @@ public   class  MyList  implements Iterable {
 
 	
 
-     private void  delete__wrappee__base  (MyNode n) {
+    
+    /*
+     * Use for JUnit testing
+     */
+    public MyNode getHead()
+    {
+    	return head;
     }
 
 	
 
     public void delete(MyNode n) {
-    	delete__wrappee__base(n);
         if (n.left != null) {
             n.left.right = n.right;
         } else {
@@ -78,16 +83,6 @@ public   class  MyList  implements Iterable {
         } else {
             tail = n.left;
         }
-    }
-
-	
-    
-    /*
-     * Use for JUnit testing
-     */
-    public MyNode getHead()
-    {
-    	return head;
     }
 
 

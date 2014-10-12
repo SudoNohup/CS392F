@@ -5,7 +5,7 @@ import FList.*;
 
 public class Main {
 
-    static MyList mylist;
+    static MyList<Entity> mylist;
 
     public static void main(String[] args) {
         // Step 1: initialize list
@@ -32,7 +32,7 @@ public class Main {
     {
     }
 
-    public static void addArray(MyList l, Entity[] arr) {
+    public static void addArray(MyList<Entity> l, Entity[] arr) {
         for (int j = 0; j < arr.length; j++) {
             l.insert(arr[j]);
         }

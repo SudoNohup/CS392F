@@ -6,17 +6,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import FList.*;
-import LApp.Entity;
 
 public class TestMyNode {
 	
-	MyNode middle;
+	MyNode<Integer> middle;
 	
 
 	private void initialization()
 	{
 		original();
-		myList.insert(new Entity("ThirdParty",80));
+		myList.insert(new Integer(80));
 		middle=myList.getHead().getRight();
 	}
 
@@ -25,8 +24,8 @@ public class TestMyNode {
 	@Test
 	public void testLeft()
 	{
-		assertEquals("(ThirdParty, 80)",middle.getLeft().toString());
-		assertEquals("(Someone, 50)",middle.getRight().getLeft().toString());
+		assertEquals(new Integer(80),middle.getLeft().getElem());
+		assertEquals(new Integer(50),middle.getRight().getLeft().getElem());
 	}
 
 }

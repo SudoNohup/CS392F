@@ -4,36 +4,35 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 import FList.*;
-import LApp.Entity;
 
 
 public class TestMyIterator {
 
-	MyList myList;
+	MyList<Integer> myList;
 	@Before
 	public void setUp() throws Exception {
-		myList=new MyList();
+		myList=new MyList<Integer>();
 	}
 	
 
 	
 	@Test
 	public void testHasNext() {
-		MyIterator it=(MyIterator)myList.iterator();
+		MyIterator<Integer> it=(MyIterator<Integer>)myList.iterator();
 		assertFalse(it.hasNext());
-		myList.insert(new Entity("Someone",50));
-		it=(MyIterator)myList.iterator();
+		myList.insert(new Integer(50));
+		it=(MyIterator<Integer>)myList.iterator();
 		assertTrue(it.hasNext());
 	}
 	
 	@Test
 	public void testNext()
 	{
-		myList.insert(new Entity("Someone",50));
-		myList.insert(new Entity("Somebody",100));
-		MyIterator it=(MyIterator)myList.iterator();
-		assertEquals("(Somebody, 100)",it.next().toString());
-		assertEquals("(Someone, 50)",it.next().toString());
+		myList.insert(new Integer(50));
+		myList.insert(new Integer(100));
+		MyIterator<Integer> it=(MyIterator<Integer>)myList.iterator();
+		assertEquals(new Integer(100),it.next());
+		assertEquals(new Integer(50),it.next());
 		assertFalse(it.hasNext());
 		
 		

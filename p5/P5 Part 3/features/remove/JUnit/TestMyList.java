@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 import FList.*;
-import LApp.Entity;
 
 public class TestMyList{
   
@@ -13,16 +12,16 @@ public class TestMyList{
 	@Test
 	public void testDetele()
 	{
-		myList.insert(new Entity("Someone",50));
-		myList.insert(new Entity("Somebody",100));
-		myList.insert(new Entity("ThirdParty",80));
+		myList.insert(new Integer(50));
+		myList.insert(new Integer(100));
+		myList.insert(new Integer(80));
 		myList.delete(myList.getHead().getRight());
 		
-		assertEquals("(ThirdParty, 80)",myList.getHead().toString());
-		assertEquals("(Someone, 50)",myList.getHead().getRight().toString());
+		assertEquals(new Integer(80),myList.getHead().getElem());
+		assertEquals(new Integer(50),myList.getHead().getRight().getElem());
 		
 		myList.delete(myList.getHead());
-		assertEquals("(Someone, 50)",myList.getHead().toString());
+		assertEquals(new Integer(50),myList.getHead().getElem());
 	}
 
 }

@@ -9,7 +9,7 @@ public class Main {
     {
     	 // Step 5: remove added nodes
         Entity[] ent = Entity.entArray2;
-        for (Iterator i = mylist.iterator(); 
+        for (Iterator<Entity> i = mylist.iterator(); 
 	       i.hasNext();) {
             Entity x = (Entity) i.next();
             for (int j = 0; j < ent.length; j++) {

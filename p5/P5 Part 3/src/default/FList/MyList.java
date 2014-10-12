@@ -1,16 +1,17 @@
 package FList; 
 
 import java.io.PrintStream; 
-import LApp.Entity; 
+
+import FList.MyNode; 
 import java.util.Iterator; 
 
-public   class  MyList  implements Iterable {
+public   class  MyList <T>  implements Iterable<T> {
 	
 
-    MyNode head;
+    MyNode<T> head;
 
 	
-    MyNode tail;
+    MyNode<T> tail;
 
 	
 
@@ -21,8 +22,8 @@ public   class  MyList  implements Iterable {
 
 	
 
-    public void insert(Object elem) {
-        insert(new MyNode(elem));
+    public void insert(T elem) {
+        insert(new MyNode<T>(elem));
     }
 
 	
@@ -45,16 +46,16 @@ public   class  MyList  implements Iterable {
 
 	
 
-    public Iterator iterator() {
-        return new MyIterator(this);
+    public Iterator<T> iterator() {
+        return new MyIterator<T>(this);
     }
 
 	
 
     public void print(PrintStream out) {
-        for (Iterator eIterator = iterator(); 
+        for (Iterator<T> eIterator = iterator(); 
 		eIterator.hasNext();) {
-            Object e = eIterator.next();
+            T e = eIterator.next();
             out.println(e);
         }
     }
@@ -85,7 +86,7 @@ public   class  MyList  implements Iterable {
     /*
      * Use for JUnit testing
      */
-    public MyNode getHead()
+    public MyNode<T> getHead()
     {
     	return head;
     }

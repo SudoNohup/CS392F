@@ -33,7 +33,6 @@ public class TestMyList{
 		myList.insert(new Entity("Somebody",100));
 		head=myList.getHead();
 		assertEquals("(Somebody, 100)",head.toString());
-		myList.insert(new Entity("Somebody",100));
 	}
 	
 	@Test

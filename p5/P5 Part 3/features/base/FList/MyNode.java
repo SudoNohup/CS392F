@@ -1,12 +1,12 @@
 package FList;
 
 
-public class MyNode {
+public class MyNode<T> {
 
-    Object elem;
+    T elem;
     MyNode right;
 
-    public MyNode(Object elem) {
+    public MyNode(T elem) {
         this.elem = elem;
         right = null;
     }
@@ -25,4 +25,11 @@ public class MyNode {
     	return right;
     }
     
+    /*
+     * The following method is for testing
+     */
+    public Object getElem()
+    {
+    	return elem;
+    }
 }

@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.Before;
 import FList.*;
-import LApp.Entity;
 
 
 public class TestMyIterator {
@@ -13,16 +12,16 @@ public class TestMyIterator {
 	@Test
 	public void testRemove()
 	{
-		myList.insert(new Entity("Someone",50));
-		myList.insert(new Entity("Somebody",100));
-		myList.insert(new Entity("ThirdParty",80));
-		MyIterator it=(MyIterator)myList.iterator();
+		myList.insert(new Integer(50));
+		myList.insert(new Integer(100));
+		myList.insert(new Integer(80));
+		MyIterator<Integer> it=(MyIterator<Integer>)myList.iterator();
 		it.next();
-		assertEquals("(Somebody, 100)",it.next().toString());
+		assertEquals(new Integer(100),it.next());
 		it.remove();
-		it=(MyIterator)myList.iterator();
-		assertEquals("(ThirdParty, 80)",it.next().toString());
-		assertEquals("(Someone, 50)",it.next().toString());
+		it=(MyIterator<Integer>)myList.iterator();
+		assertEquals(new Integer(80),it.next());
+		assertEquals(new Integer(50),it.next());
 	}
 	
 	

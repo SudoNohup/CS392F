@@ -6,12 +6,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import FList.*;
-import LApp.Entity;
 
 public class TestMyNode {
 	
-	MyList myList;
-	MyNode node;
+	MyList<Integer> myList;
+	MyNode<Integer> node;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -21,20 +20,20 @@ public class TestMyNode {
 	private void initialization()
 	{
 		myList=new MyList();
-		myList.insert(new Entity("Somebody",100));
-		myList.insert(new Entity("Someone",50));
+		myList.insert(new Integer(100));
+		myList.insert(new Integer(50));
 		node=myList.getHead();
 	}
 
 	@Test
 	public void testCreation() { 		
-		assertEquals("(Someone, 50)",node.toString());
+		assertEquals(new Integer(50),node.getElem());
 	}
 	
 	@Test
 	public void testRight()
 	{
-		assertEquals("(Somebody, 100)", node.getRight().toString());
+		assertEquals(new Integer(100), node.getRight().getElem());
 	}
 
 }
