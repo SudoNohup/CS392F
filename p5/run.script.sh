@@ -24,19 +24,21 @@ cd ${src}
 
 javac */*.java
 
-run1="java JUnit/TestWrapper"
+run="java JUnit/TestWrapper"
 
-echo $run1
+echo $run
 
 echo
 
-$run1
+$run
 
 mv out.txt ../../
 
 rm -r *.txt
 
 rm -r */*.class
+
+cd ../../../
 
 echo "The execution does not generate exceptions. This means the output values match the expected values"
 
@@ -52,7 +54,7 @@ echo "Start running JUnit Tests classes in part 3"
 
 echo
 
-cd ${part1}
+cd ${part3}
 
 cp expected12.txt ${src}
 
@@ -62,19 +64,19 @@ cd ${src}
 
 javac */*.java
 
-run1="java JUnit/TestWrapper"
-
-echo $run1
+echo $run
 
 echo
 
-$run1
+$run
 
 mv out.txt ../../
 
 rm -r *.txt
 
 rm -r */*.class
+
+cd ../../../
 
 echo "The execution does not generate exceptions. This means the output values match the expected values"
 
