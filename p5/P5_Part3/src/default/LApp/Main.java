@@ -12,7 +12,7 @@ public   class  Main {
 
     public static void main(String[] args) {
         // Step 1: initialize list
-        mylist = new MyList();
+        mylist = new MyList<Entity>();
 
         addArray(mylist, Entity.entArray1);
 

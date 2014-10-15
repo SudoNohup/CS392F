@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class MyList<T> implements Iterable<T> {
 
-    public void delete(MyNode n) {
+    public void delete(MyNode<T> n) {
     	original(n);
         if (n.left != null) {
             n.left.right = n.right;

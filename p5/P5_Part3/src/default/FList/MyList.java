@@ -28,14 +28,14 @@ public   class  MyList <T>  implements Iterable<T> {
 
 	
 
-     private void  insert__wrappee__base  (MyNode n) {
+     private void  insert__wrappee__base  (MyNode<T> n) {
         n.right = head;
         head = n;
     }
 
 	
 
-    void insert(MyNode n)
+    void insert(MyNode<T> n)
     {
     	insert__wrappee__base(n);
     	n.left = null;
@@ -62,12 +62,12 @@ public   class  MyList <T>  implements Iterable<T> {
 
 	
 
-     private void  delete__wrappee__base  (MyNode n) {
+     private void  delete__wrappee__base  (MyNode<T> n) {
     }
 
 	
 
-    public void delete(MyNode n) {
+    public void delete(MyNode<T> n) {
     	delete__wrappee__base(n);
         if (n.left != null) {
             n.left.right = n.right;

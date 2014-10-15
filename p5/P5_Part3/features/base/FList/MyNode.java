@@ -4,7 +4,7 @@ package FList;
 public class MyNode<T> {
 
     T elem;
-    MyNode right;
+    MyNode<T> right;
 
     public MyNode(T elem) {
         this.elem = elem;
@@ -20,7 +20,7 @@ public class MyNode<T> {
      * The following method is for testing
      */
     
-    public MyNode getRight()
+    public MyNode<T> getRight()
     {
     	return right;
     }
@@ -28,7 +28,7 @@ public class MyNode<T> {
     /*
      * The following method is for testing
      */
-    public Object getElem()
+    public T getElem()
     {
     	return elem;
     }

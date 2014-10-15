@@ -19,7 +19,7 @@ public class TestMyNode {
 	
 	private void initialization()
 	{
-		myList=new MyList();
+		myList=new MyList<Integer>();
 		myList.insert(new Integer(100));
 		myList.insert(new Integer(50));
 		node=myList.getHead();

@@ -19,7 +19,7 @@ public class MyList<T> implements Iterable<T> {
         insert(new MyNode<T>(elem));
     }
 
-    void insert(MyNode n) {
+    void insert(MyNode<T> n) {
         n.right = head;
         head = n;
     }
@@ -36,7 +36,7 @@ public class MyList<T> implements Iterable<T> {
         }
     }
 
-    public void delete(MyNode n) {
+    public void delete(MyNode<T> n) {
     }
     
     /*

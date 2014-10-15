@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class MyList<T> implements Iterable<T> {
 
-    void insert(MyNode n)
+    void insert(MyNode<T> n)
     {
     	original(n);
     	n.left = null;
