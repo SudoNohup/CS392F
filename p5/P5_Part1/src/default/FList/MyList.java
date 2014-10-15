@@ -70,20 +70,5 @@ public   class  MyList  implements Iterable {
     	return head;
     }
 
-	
-
-    public void delete(MyNode n) {
-        if (n.left != null) {
-            n.left.right = n.right;
-        } else {
-            head = n.right;
-        }
-        if (n.right != null) {
-            n.right.left = n.left;
-        } else {
-            tail = n.left;
-        }
-    }
-
 
 }

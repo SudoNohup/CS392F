@@ -2,76 +2,45 @@
 	"features" : [
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
 		"dbl",
-		"remove",
 		"base",
-		"dbl",
-		"remove"
+		"dbl"
 	],
 	"roles": {
 		"insert": {
 			"base": "insert__wrappee__base",
 			"dbl": "insert"
-		},
-		"setUp": {
-			"dbl": "setUp",
-			"base": "setUp__wrappee__base",
-			"remove": "setUp"
-		},
-		"testCreation": {
-			"dbl": "testCreation",
-			"remove": "testCreation"
-		},
-		"testRight": {
-			"dbl": "testRight",
-			"base": "testRight__wrappee__base"
 		},
 		"initialization": {
 			"base": "initialization__wrappee__base",
@@ -80,22 +49,14 @@
 		"remove": {
 			"remove": "remove"
 		},
-		"delete": {
-			"base": "delete__wrappee__base",
-			"remove": "delete"
-		},
-		"testInsert": {
-			"remove": "testInsert"
-		},
-		"testIterator": {
-			"remove": "testIterator"
-		},
 		"reviseList": {
 			"remove": "reviseList"
 		},
-		"printMe": {
-			"Base": "printMe__wrappee__Base",
-			"Beautiful": "printMe"
+		"main": {
+			"remove": "main"
+		},
+		"testMain": {
+			"remove": "testMain"
 		}
 	}
 
