@@ -1,4 +1,10 @@
+TestEntity:true
+TestMain:true
+TestMyIterator:true
+TestMyList:true
+TestMyNode:true
 original list
+Enter print function!
 (Chili, 20)
 (Beth, 22)
 (Scarlett, 7)
@@ -6,6 +12,7 @@ original list
 (Steve, 90)
 (Don, 60)
 augmented list
+Enter print function!
 (Kelsey, 25)
 (Haggis, 1)
 (Chili, 20)
@@ -15,6 +22,7 @@ augmented list
 (Steve, 90)
 (Don, 60)
 revised list
+Enter print function!
 (Chili, 20)
 (Beth, 22)
 (Scarlett, 7)

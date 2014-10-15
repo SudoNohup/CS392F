@@ -52,6 +52,13 @@ cd ${part2}
 
 cp expected1.txt ${src}
 
+cp expected2.txt ${src}
+
+cp expected3.txt ${src}
+
+cp expected4.txt ${src}
+
+
 cd ${src}
 
 javac */*.java

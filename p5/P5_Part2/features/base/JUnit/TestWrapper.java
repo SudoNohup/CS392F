@@ -7,6 +7,8 @@ import LApp.Main;
 
 public  class  TestWrapper {
 	
+	
+	private static boolean remove=false;
 
 	/**
 	 * @param args

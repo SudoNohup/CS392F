@@ -1,12 +1,15 @@
-package JUnit;  
-import org.junit.runner.*;  
+package JUnit; 
+import org.junit.runner.*; 
 
-import LApp.Main;  
+import LApp.Main; 
 
 
 
-public   class   TestWrapper {
+public   class  TestWrapper {
 	
+
+	private static boolean remove  =true;
+
 	
 
 	/**
@@ -25,15 +28,21 @@ public   class   TestWrapper {
 
 	
 
-	
 
 	
-	private static void testMain()
+	private static void testMain  ()
 	{
 		
 		String args[]=null;
 		Main.main(args);
-		RegTest.Utility.validate("out.txt", "expected1.txt", false);
+		if(remove)
+		{
+		    RegTest.Utility.validate("out.txt", "expected4.txt", false);
+		}
+		else
+		{
+			RegTest.Utility.validate("out.txt", "expected3.txt", false);
+		}
 		
 	}
 

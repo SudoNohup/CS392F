@@ -2,57 +2,75 @@
 	"features" : [
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list",
 		"base",
 		"dbl",
+		"remove",
 		"ordered_list"
 	],
 	"roles": {
@@ -73,40 +91,36 @@
 			"remove": "reviseList",
 			"delete_flag": "reviseList"
 		},
+		"main": {
+			"remove": "main"
+		},
+		"testMain": {
+			"remove": "testMain",
+			"ordered_list": "testMain",
+			"delete_flag": "testMain"
+		},
+		"delete": {
+			"base": "delete__wrappee__base",
+			"remove": "delete",
+			"delete_flag": "delete__wrappee__base"
+		},
+		"addLeftLink": {
+			"dbl": "addLeftLink"
+		},
+		"isOrdered": {
+			"ordered_list": "isOrdered"
+		},
 		"addArray": {
 			"ordered_list": "addArray"
 		},
 		"setUp": {
 			"ordered_list": "setUp"
 		},
-		"testMain": {
-			"ordered_list": "testMain"
-		},
-		"addLeftLink": {
-			"dbl": "addLeftLink"
-		},
 		"hasNext": {
 			"delete_flag": "hasNext"
 		},
 		"next": {
 			"delete_flag": "next"
-		},
-		"delete": {
-			"base": "delete__wrappee__base",
-			"delete_flag": "delete",
-			"remove": "delete__wrappee__base"
-		},
-		"testInsert": {
-			"ordered_list": "testInsert"
-		},
-		"testRemove": {
-			"ordered_list": "testRemove"
-		},
-		"testDetele": {
-			"ordered_list": "testDetele"
-		},
-		"isOrdered": {
-			"ordered_list": "isOrdered"
 		}
 	}
 

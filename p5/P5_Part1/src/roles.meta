@@ -2,40 +2,58 @@
 	"features" : [
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
 		"dbl",
+		"remove",
 		"base",
-		"dbl"
+		"dbl",
+		"remove"
 	],
 	"roles": {
 		"insert": {
@@ -57,6 +75,10 @@
 		},
 		"testMain": {
 			"remove": "testMain"
+		},
+		"delete": {
+			"base": "delete__wrappee__base",
+			"remove": "delete"
 		}
 	}
 

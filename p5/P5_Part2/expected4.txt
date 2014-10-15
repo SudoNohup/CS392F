@@ -5,19 +5,27 @@ TestMyList:true
 TestMyNode:true
 original list
 Enter print function!
-(Chili, 20)
 (Beth, 22)
-(Scarlett, 7)
 (Chief, 3)
-(Steve, 90)
+(Chili, 20)
 (Don, 60)
+(Scarlett, 7)
+(Steve, 90)
 augmented list
 Enter print function!
-(Kelsey, 25)
-(Haggis, 1)
-(Chili, 20)
 (Beth, 22)
-(Scarlett, 7)
 (Chief, 3)
-(Steve, 90)
+(Chili, 20)
 (Don, 60)
+(Haggis, 1)
+(Kelsey, 25)
+(Scarlett, 7)
+(Steve, 90)
+revised list
+Enter print function!
+(Beth, 22)
+(Chief, 3)
+(Chili, 20)
+(Don, 60)
+(Scarlett, 7)
+(Steve, 90)

@@ -132,7 +132,23 @@ public   class  MyList  implements Iterable {
 
 	
 
+     private void  delete__wrappee__base  (MyNode n) {
+    }
+
+	
+
     public void delete(MyNode n) {
+    	delete__wrappee__base(n);
+        if (n.left != null) {
+            n.left.right = n.right;
+        } else {
+            head = n.right;
+        }
+        if (n.right != null) {
+            n.right.left = n.left;
+        } else {
+            tail = n.left;
+        }
     }
 
 	
