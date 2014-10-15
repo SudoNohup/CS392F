@@ -67,14 +67,11 @@
 		"remove": {
 			"remove": "remove"
 		},
-		"reviseList": {
-			"remove": "reviseList"
-		},
-		"main": {
-			"remove": "main"
-		},
 		"testMain": {
 			"remove": "testMain"
+		},
+		"reviseList": {
+			"remove": "reviseList"
 		},
 		"delete": {
 			"base": "delete__wrappee__base",
