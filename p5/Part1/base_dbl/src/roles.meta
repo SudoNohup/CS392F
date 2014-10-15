@@ -1,0 +1,51 @@
+{
+	"features" : [
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl",
+		"base",
+		"dbl"
+	],
+	"roles": {
+		"insert": {
+			"base": "insert__wrappee__base",
+			"dbl": "insert"
+		},
+		"initialization": {
+			"base": "initialization__wrappee__base",
+			"dbl": "initialization"
+		}
+	}
+
+}

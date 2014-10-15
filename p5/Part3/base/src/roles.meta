@@ -1,0 +1,42 @@
+{
+	"features" : [
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base",
+		"base"
+	],
+	"roles": {
+		"insert": {
+			"base": "insert__wrappee__base",
+			"dbl": "insert"
+		},
+		"initialization": {
+			"base": "initialization__wrappee__base",
+			"dbl": "initialization"
+		},
+		"remove": {
+			"remove": "remove"
+		},
+		"testMain": {
+			"remove": "testMain"
+		},
+		"reviseList": {
+			"remove": "reviseList"
+		}
+	}
+
+}
