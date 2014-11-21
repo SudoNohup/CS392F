@@ -26,7 +26,10 @@ public class Tuple {
 
     // field getters and setters
     public void set(int fieldNumber, String value ) { field[fieldNumber] = value; }
-    public String get(int fieldNumber) { return field[fieldNumber]; }
+    public String get(int fieldNumber) { 
+        //System.out.println("Tuple.get() " + this.toString() + "    fieldNumber: " + fieldNumber);
+        return field[fieldNumber]; 
+    }
     public int getSize() { return size; }
     public String[] getFields() { return field; }
 

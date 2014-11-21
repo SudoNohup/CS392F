@@ -31,6 +31,7 @@ public class Connector {
             PipedInputStream readEnd = new PipedInputStream(writeEnd);
             out = new PrintStream(writeEnd);
             in = new BufferedReader(new InputStreamReader(readEnd));
+            System.out.println("new Connector: " + this.name);
             all.add(this);
         } catch (Exception e) {
             System.err.println(this.getClass().getName() + e);
@@ -51,6 +52,7 @@ public class Connector {
     }
 
     public void setRelation(Relation r) {
+        System.out.println("new Relation: " + r.getRelationName());
         this.r = r;
     }
 

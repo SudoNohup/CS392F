@@ -5,11 +5,8 @@
  */
 package hashJoins;
 
-import basicConnector.ReadEnd;
-import gammaSupport.Tuple;
-import gammaSupport.ReportError;
-import gammaSupport.ThreadList;
-
+import basicConnector.*;
+import gammaSupport.*;
 /**
  *
  * @author Jianyu, Xiaohui
@@ -18,11 +15,13 @@ public class Print extends Thread{
     ReadEnd in;
     
     public Print(ReadEnd in) {
+        //System.out.println("Come into Print!");
         this.in = in;
-        ThreadList.add(this);
+        //ThreadList.add(this);
     }
     
     public void run() {
+        //System.out.println("run() of Print!");
         try {
             Tuple inputTuple;
             inputTuple = in.getNextTuple();
@@ -30,6 +29,9 @@ public class Print extends Thread{
                 System.out.println(inputTuple);
                 inputTuple = in.getNextTuple();
             }
+            //There is no in.close()....
+            
+            //Do we need to print the Relation?
             System.out.println(in.getRelation());
             System.out.flush();
         } catch(Exception e) {

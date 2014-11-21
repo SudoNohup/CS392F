@@ -1,0 +1,5 @@
+Come into HJoin!
+Come into Print!
+Come into ReadRelation!
+Come into ReadRelation!
+Joining input/parts.txt with input/odetails.txt
