@@ -53,19 +53,24 @@ public class HJoin extends Thread {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     */
-    
-    public void run() {
+        public void run() {
         //System.out.println("Come into run() of HJoin!");
-        try {
-            Map<String, List<Tuple>> temp = new HashMap<String, List<Tuple>>();
-            while (true) {
-                Tuple tuple = in1.getNextTuple();
+        //try {
+        Map<String, List<Tuple>> temp = new HashMap<String, List<Tuple>>();
+        while (true) {
+            Tuple tuple = null;
 
-                if (tuple == null || tuple.toString().equals("1#null#")) {
-                    break;
-                }
-                String key = tuple.get(joinKey1);
-                if (key != null) {
+            try {
+                tuple = in1.getNextTuple();
+            } catch (Exception e) {
+
+            }
+
+            if (tuple == null || tuple.toString().equals("1#null#")) {
+                break;
+            }
+            String key = tuple.get(joinKey1);
+            if (key != null) {
                 if (temp.containsKey(key)) {
                     //System.out.println("contain1: " + key + " " + tuple.toString());
                     List<Tuple> list = temp.get(key);
@@ -76,45 +81,63 @@ public class HJoin extends Thread {
                     list.add(tuple);
                     temp.put(key, list);
                 }
-                }
             }
-            
-            
-            //for ()
-            //System.out.println();
-            //System.out.println("----------------------");
-            
-            while (true) {
-                Tuple tuple2 = in2.getNextTuple();
-       
-                if (tuple2 == null || tuple2.toString().equals("1#null#")) {
-                    break;
-                }
+        }
 
-                //System.out.println("++++++++++" + tuple2.toString() + "  joinKey2:" + joinKey2);
-                String key2 = tuple2.get(joinKey2);
-                if (temp.containsKey(key2)) {
-                    //System.out.println("contain2: " + key2 + " " + tuple2.toString());
-                    List<Tuple> list = temp.get(key2);
-                    for (Tuple tuple1 : list) {
+            //for ()
+        //System.out.println();
+        //System.out.println("----------------------");
+        while (true) {
+            Tuple tuple2 = null;
+            try {
+                tuple2 = in2.getNextTuple();
+            } catch (Exception e) {
+
+            }
+
+            if (tuple2 == null || tuple2.toString().equals("1#null#")) {
+                break;
+            }
+
+            //System.out.println("++++++++++" + tuple2.toString() + "  joinKey2:" + joinKey2);
+            String key2 = tuple2.get(joinKey2);
+            if (temp.containsKey(key2)) {
+                //System.out.println("contain2: " + key2 + " " + tuple2.toString());
+                List<Tuple> list = temp.get(key2);
+                for (Tuple tuple1 : list) {
                         //The parameter joinKey1 is not used in Tuple.join() function..
-                        //System.out.println("tuple1: " + tuple1.toString());
-                        Tuple outTuple = Tuple.join(tuple1, tuple2, joinKey1, joinKey2);
-                       
+                    //System.out.println("tuple1: " + tuple1.toString());
+                    Tuple outTuple = Tuple.join(tuple1, tuple2, joinKey1, joinKey2);
+                    
+                    
+                    //System.out.println(this.getClass().getName() +" " + outTuple);
+
+                    try {
                         out.putNextTuple(outTuple);
+                    } catch (Exception e) {
 
                     }
-                }                
-            }
 
-            
-            Relation relation1 = in1.getRelation();
-            Relation relation2 = in2.getRelation();
-            Relation outRelation = Relation.join(relation1, relation2, joinKey1, joinKey2);
-            out.setRelation(outRelation);
-            out.close();
-        } catch(Exception e) {
-            ReportError.msg(this.getClass().getName() + e);
+                }
+            }
         }
+
+        Relation relation1 = in1.getRelation();
+        Relation relation2 = in2.getRelation();
+        //System.out.println("!!!!!!!!!!!!!" + relation1.getRelationName() + " " + relation2.getRelationName() + " ");
+        Relation outRelation = Relation.join(relation1, relation2, joinKey1, joinKey2);
+        /*
+        if (outRelation == null) {
+            System.out.println("null................\n");
+        } else {
+            System.out.println("~~~~~~~~~~~~~~" + outRelation.getRelationName());
+        }
+        */
+
+        out.setRelation(outRelation);
+        out.close();
+        //} catch(Exception e) {
+        //    ReportError.msg(this.getClass().getName() + e);
+        // }
     }
 }

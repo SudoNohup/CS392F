@@ -39,7 +39,11 @@ public class HSplit extends Thread {
                 }
                 int hash = myhash(tuple);
                 out[hash].putNextTuple(tuple);
-                System.out.println(this.getClass().getName() +" Hash " + hash + " " + tuple);
+                //System.out.println(this.getClass().getName() +" Hash " + hash + " " + tuple);
+            }
+            for (int i = 0; i < GammaConstants.splitLen; i++) {
+                out[i].setRelation(in.getRelation());
+                out[i].close();
             }
         } catch (Exception e) {
             ReportError.msg(this.getClass().getName() + e);

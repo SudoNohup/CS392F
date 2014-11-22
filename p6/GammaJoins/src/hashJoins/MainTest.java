@@ -9,6 +9,11 @@ package hashJoins;
 import basicConnector.*;
 import gammaSupport.*;
 import gamma.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 
@@ -23,11 +28,13 @@ public class MainTest {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        //jointest();
-        System.out.println("Come into main()");
-        //testBloomSimulator();
+       jointest();
+        //System.out.println("Come into main()");
+        testBloomSimulator();
 
         gammaTest("client","viewing");
+        
+        testJoinMapReduce_ClientXViewing();
     }
 
  
@@ -42,21 +49,32 @@ public class MainTest {
     
     
     public static void gammaTest(String file1, String file2) {
-        System.out.println("Starting Gamma Test...");
+        //System.out.println("Starting Gamma Test...");
         Connector out = new Connector("output");
+        System.out.println("invoke Gamma....");
         Gamma h = new Gamma(0, file1, 0, file2, out);
-        Print p = new Print(out.getReadEnd());
         h.start();
+
+        //System.out.println(out.getRelation());
+        Print p = new Print(out);
+        
         p.start();
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
-    
-    
-       public static void join(String r1name, String r2name, int jk1, int jk2) throws Exception {
+
+    public static void testJoinMapReduce_ClientXViewing() {
+        //System.out.println("Starting test MapReduce hJoin..._ClientXViewing");
+
+        Connector out2 = new Connector("output2");
+        MapReduceHJoin mapJ = new MapReduceHJoin(0, "client", 0, "viewing", out2);
+        mapJ.start();
+        //System.out.println(out2.getRelation());
+        Print p2 = new Print(out2);
+        p2.start();
+
+    }
+
+    public static void join(String r1name, String r2name, int jk1, int jk2) throws Exception {
         System.out.println("Joining " + r1name + " with " + r2name);
 
         ThreadList.init();
@@ -84,7 +102,7 @@ public class MainTest {
         
         //HJoin hj = new HJoin(c1.getReadEnd(), c2.getReadEnd(), jk1, jk2, o.getWriteEnd());
         HJoin hj = new HJoin(c1, c2, jk1, jk2, o);
-        Print p = new Print(o.getReadEnd());
+        Print p = new Print(o);
         r1.start();
         r2.start();
         hj.start();
@@ -100,5 +118,26 @@ public class MainTest {
          join("orders", "odetails", 0, 0);
          */
 
+    }
+    
+      public static void FileSort(String fileName) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            ArrayList<String> list = new ArrayList<String>();
+            String line = "";
+            while((line = reader.readLine()) != null) {
+                list.add(line);
+            }
+            reader.close();
+            FileWriter writer = new FileWriter(fileName);
+            Collections.sort(list);
+            for(String val : list){
+                writer.write(val);	
+                writer.write('\n');
+            }
+            writer.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

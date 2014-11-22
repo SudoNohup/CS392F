@@ -39,11 +39,12 @@ public class Merge extends Thread {
                         break;
                     }
                     out.putNextTuple(tuple);
-                    System.out.println(this.getClass().getName() +" Merged Output " + tuple);
+                    //System.out.println(this.getClass().getName() +" Merged Output " + tuple);
                 }
             }
             //in0, in1, in2, in3...should have the same relation name.
             out.setRelation(in[0].getRelation());
+            //System.out.println("--------" + out.getRelation());;
             out.close();
         } catch (Exception e) {
             ReportError.msg(this.getClass().getName() + e);

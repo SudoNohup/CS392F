@@ -32,6 +32,7 @@ public class Gamma extends ArrayConnectors {
 
     public void start() {
         try {
+            System.out.println("Come into Gamma....");
             Connector c1 = new Connector("input1");
             ReadRelation r1 = new ReadRelation(fileName1, c1);
             r1.start();

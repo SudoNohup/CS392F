@@ -76,4 +76,11 @@ public class Relation {
         }
         return true;
     }
+    
+    @Override
+    public String toString() {
+        String result = size + Tuple.separator;
+        for (String i : fieldNames) result = result + i + Tuple.separator;
+        return result;
+    }
 }
