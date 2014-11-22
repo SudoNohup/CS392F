@@ -27,6 +27,7 @@ public class MainTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
+        /*
         // TODO code application logic here
        jointest();
         //System.out.println("Come into main()");
@@ -35,10 +36,29 @@ public class MainTest {
         gammaTest("client","viewing");
         
         testJoinMapReduce_ClientXViewing();
+        */
+        
+        testMapReduceBloom();
     }
 
- 
-    
+    public static void testMapReduceBloom() throws Exception {
+        System.out.println("Starting Map Reduce Bloom Test");
+        Connector print_bloom = new Connector("print_bloom");
+        ReadRelation r = new ReadRelation("client", print_bloom);
+        Connector bloom_join = new Connector("bloom_join");
+        //Print p1 = new Print(bloom_join);
+        Connector bloom_bmap = new Connector("bloom_bmap");
+
+        MapReduceBloom mapReduceBloom = new MapReduceBloom(print_bloom, bloom_join, bloom_bmap, 0);
+        r.start();
+        mapReduceBloom.start();
+        //p1.start();
+        
+        //We should use printM to print BMap....
+        PrintMap pM = new PrintMap(bloom_bmap);
+        pM.start();
+    }
+
     public static void testBloomSimulator() throws Exception {
         Connector bloom_print = new Connector("bloom_print");
         BloomSimulator bloomSimulator = new BloomSimulator(bloom_print, "client");
