@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/test/UnitTest.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/HSplit.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/MainTest.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/HJoin.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gamma/HJoinRefineWithBloomFilters.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gamma/MapReduceHJoin.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/ThreadList.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/Tuple.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gamma/MapReduceBloom.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/Bloom.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/Sink.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gamma/Gamma.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/ReportError.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/Relation.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/BMap.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/basicConnector/Connector.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/SplitM.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/BloomSimulator.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/Merge.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/Print.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/basicConnector/ReadEnd.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gamma/MapReduceBFilter.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/gammaSupport/ArrayConnectors.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/ReadRelation.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/DoNothing.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/PrintMap.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/BFilter.java</file>
+            <file>file:/C:/Users/Jianyu/Documents/NetBeansProjects/GammaJoins/src/hashJoins/MergeM.java</file>
+        </group>
+    </open-files>
+</project-private>
