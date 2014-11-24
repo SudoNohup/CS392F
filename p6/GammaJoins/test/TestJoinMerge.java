@@ -63,7 +63,7 @@ public class TestJoinMerge {
         split_filter3 = new Connector("split_filter3");
         
         rr2=new ReadRelation("test/test_table1",relation_split2);
-        split2 = new HSplit(1, relation_split2, split_filter0, split_filter1, split_filter2, split_filter3);
+        split2 = new HSplit(0, relation_split2, split_filter0, split_filter1, split_filter2, split_filter3);
         
         bloom_filter0=new Connector("bloom_filter0");
         bloom_filter1=new Connector("bloom_filter1");
@@ -84,20 +84,20 @@ public class TestJoinMerge {
         filter_join2=new Connector("filter_join2");
         filter_join3=new Connector("filter_join3");
         
-        filter0=new BFilter(bloom_filter0,split_filter0,filter_join0,1);
-        filter1=new BFilter(bloom_filter1,split_filter1,filter_join1,1);
-        filter2=new BFilter(bloom_filter2,split_filter2,filter_join2,1);
-        filter3=new BFilter(bloom_filter3,split_filter3,filter_join3,1);
+        filter0=new BFilter(bloom_filter0,split_filter0,filter_join0,0);
+        filter1=new BFilter(bloom_filter1,split_filter1,filter_join1,0);
+        filter2=new BFilter(bloom_filter2,split_filter2,filter_join2,0);
+        filter3=new BFilter(bloom_filter3,split_filter3,filter_join3,0);
         
         join_merge0 = new Connector("join_merge0");
         join_merge1 = new Connector("join_merge1");
         join_merge2 = new Connector("join_merge2");
         join_merge3 = new Connector("join_merge4");
         
-        join0=new HJoin( bloom_join0,filter_join0,0,1,join_merge0);
-        join1=new HJoin( bloom_join1,filter_join1,0,1,join_merge1);
-        join2=new HJoin( bloom_join2,filter_join2,0,1,join_merge2);
-        join3=new HJoin( bloom_join3,filter_join3,0,1,join_merge3);
+        join0=new HJoin( bloom_join0,filter_join0,0,0,join_merge0);
+        join1=new HJoin( bloom_join1,filter_join1,0,0,join_merge1);
+        join2=new HJoin( bloom_join2,filter_join2,0,0,join_merge2);
+        join3=new HJoin( bloom_join3,filter_join3,0,0,join_merge3);
         
         test_merge=new Connector("test_merge");
         merge=new Merge(test_merge,join_merge0,join_merge1,join_merge2,join_merge3);
@@ -155,6 +155,6 @@ public class TestJoinMerge {
             e.printStackTrace();
         }
 
-        RegTest.Utility.validate("input/test/testMerge.txt", "input/test/testMergeResult.txt", false);
+        RegTest.Utility.validate("input/test/testMerge.txt", "input/test/testMergeResult.txt", true);
     }
 }

@@ -41,7 +41,7 @@ public class TestHSplit {
         test_split1=new Connector("test_split1");
         test_split2=new Connector("test_split2");
         test_split3=new Connector("test_split3");
-        rr=new ReadRelation("test/test_table",relation_split);
+        rr=new ReadRelation("test/test_table1",relation_split);
         split=new HSplit(0,relation_split,test_split0,test_split1,test_split2,test_split3);
        
         
@@ -117,7 +117,7 @@ public class TestHSplit {
             }
         
         
-        RegTest.Utility.validate("input/test/testSplit.txt", "input/test/testSplitResult.txt", false);
+        RegTest.Utility.validate("input/test/testSplit.txt", "input/test/testSplitResult.txt", true);
          
         
     }

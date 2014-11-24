@@ -67,10 +67,10 @@ public class TestReadRelation {
         try{
             while (true) {
                 tuple = in.getNextTuple();
-                System.out.println(tuple);
                 if (tuple == null || tuple.toString().equals("1#null#")) {
                     break;
                 }
+                System.out.println(tuple);
             }
         }catch(Exception e)
         {

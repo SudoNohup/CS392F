@@ -59,7 +59,7 @@ public class TestBloomFilter {
         split_filter3 = new Connector("split_filter3");
         
         rr2=new ReadRelation("test/test_table1",relation_split2);
-        split2 = new HSplit(1, relation_split2, split_filter0, split_filter1, split_filter2, split_filter3);
+        split2 = new HSplit(0, relation_split2, split_filter0, split_filter1, split_filter2, split_filter3);
         
         bloom_filter0=new Connector("bloom_filter0");
         bloom_filter1=new Connector("bloom_filter1");
@@ -80,10 +80,10 @@ public class TestBloomFilter {
         test_filter2=new Connector("test_filter2");
         test_filter3=new Connector("test_filter3");
         
-        filter0=new BFilter(bloom_filter0,split_filter0,test_filter0,1);
-        filter1=new BFilter(bloom_filter1,split_filter1,test_filter1,1);
-        filter2=new BFilter(bloom_filter2,split_filter2,test_filter2,1);
-        filter3=new BFilter(bloom_filter3,split_filter3,test_filter3,1);
+        filter0=new BFilter(bloom_filter0,split_filter0,test_filter0,0);
+        filter1=new BFilter(bloom_filter1,split_filter1,test_filter1,0);
+        filter2=new BFilter(bloom_filter2,split_filter2,test_filter2,0);
+        filter3=new BFilter(bloom_filter3,split_filter3,test_filter3,0);
         
         
         
@@ -171,7 +171,7 @@ public class TestBloomFilter {
             }
         
         
-        RegTest.Utility.validate("input/test/testFilter.txt", "input/test/testFilterResult.txt", false);
+        RegTest.Utility.validate("input/test/testFilter.txt", "input/test/testFilterResult.txt", true);
         
         
     }
