@@ -36,7 +36,7 @@ public class ReadRelation extends Thread{
     public ReadRelation (String db, Connector c) {
         String fileName = "input/" + db + ".txt";
         WriteEnd out = c.getWriteEnd();
-        System.out.println("Come into ReadRelation!");
+        //System.out.println("Come into ReadRelation!");
         try {
             this.db = db;
             in = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
@@ -62,7 +62,7 @@ public class ReadRelation extends Thread{
     */
     
     public void run() {
-        System.out.println("Come into run() of ReadRelation!");
+        //System.out.println("Come into run() of ReadRelation!");
         try {
             String input;
             int line = 0;

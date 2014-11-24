@@ -1,0 +1,4 @@
+2	10003	NVIDIA	
+2	10000	IBM	
+2	10001	Hewlett-Packard	
+2	10002	Microsoft	
