@@ -38,7 +38,8 @@ public class MainTest {
         testJoinMapReduce_ClientXViewing();
         */
         
-        testMapReduceBloom();
+        //testMapReduceBloom();
+        testJoinMapReduce_ClientXViewing();
     }
 
     public static void testMapReduceBloom() throws Exception {

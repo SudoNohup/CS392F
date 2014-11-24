@@ -1,0 +1,6 @@
+supplier_id	supplier_name
+--------   --------
+10000	IBM
+10001	Hewlett-Packard
+10002	Microsoft
+10003	NVIDIA

@@ -26,7 +26,7 @@ public class HJoin extends Thread {
     int joinKey2 = 0;
     
     public HJoin(ReadEnd in1, ReadEnd in2, int joinKey1, int joinKey2, WriteEnd out)  {
-        System.out.println("Come into HJoin!");
+        //System.out.println("Come into HJoin!");
         this.joinKey1 = joinKey1;
         this.joinKey2 = joinKey2;
         this.in1 = in1;
@@ -39,7 +39,7 @@ public class HJoin extends Thread {
         ReadEnd in1 = c1.getReadEnd();
         ReadEnd in2 = c2.getReadEnd();
         WriteEnd out = c3.getWriteEnd();
-        System.out.println("Come into HJoin!");
+        //System.out.println("Come into HJoin!");
         this.joinKey1 = joinKey1;
         this.joinKey2 = joinKey2;
         this.in1 = in1;

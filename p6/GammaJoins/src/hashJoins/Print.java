@@ -32,20 +32,21 @@ public class Print extends Thread{
     public void run() {
         //System.out.println("run() of Print!");
         try {
-
-            Tuple inputTuple;
-            inputTuple = in.getNextTuple();
-           
-            //System.out.println(in.getRelation());
-            while (inputTuple != null) {
-                System.out.println(inputTuple);
-                inputTuple = in.getNextTuple();
-                 
+            while(in.getRelation()==null)
+            {
+                
             }
-            
-            //Where should we print the relation?????????????Pipeline bug.....
             System.out.println(in.getRelation());
-            //There is no in.close()....Do we need it????
+            Tuple tuple;
+            while (true) {
+                tuple = in.getNextTuple();
+                if (tuple == null || tuple.toString().equals("1#null#")) {
+                    break;
+                }
+                System.out.println(tuple);
+            }
+
+            
 
             System.out.flush();
         } catch(Exception e) {

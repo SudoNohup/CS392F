@@ -1,0 +1,6 @@
+2	supplier_id	supplier_name	
+2	10000	IBM	
+2	10001	Hewlett-Packard	
+2	10002	Microsoft	
+2	10003	NVIDIA	
+null
