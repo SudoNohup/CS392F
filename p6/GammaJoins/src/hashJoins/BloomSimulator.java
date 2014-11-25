@@ -10,7 +10,7 @@ import gammaSupport.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class BloomSimulator extends Thread {
     Connector c_outM;

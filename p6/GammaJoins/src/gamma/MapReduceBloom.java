@@ -11,7 +11,7 @@ import hashJoins.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class MapReduceBloom extends ArrayConnectors {
     
@@ -46,6 +46,7 @@ public class MapReduceBloom extends ArrayConnectors {
 
             MergeM m1 = new MergeM(c_outM, arr2bmap[0], arr2bmap[1], arr2bmap[2], arr2bmap[3]);
             m1.start();
+            
         } catch (Exception e) {
             ReportError.msg(this.getClass().getName() + e);
         }

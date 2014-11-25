@@ -12,12 +12,12 @@ import hashJoins.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class Gamma extends ArrayConnectors {
     
-    String fileName1;
-    String fileName2;
+    String fName1;
+    String fName2;
     Connector c_out;
     int joinKey1 = 0;
     int joinKey2 = 0;
@@ -25,16 +25,15 @@ public class Gamma extends ArrayConnectors {
     public Gamma(int joinKey1, String in1, int joinKey2, String in2, Connector c_out) {
         this.joinKey1 = joinKey1;
         this.joinKey2 = joinKey2;
-        this.fileName1 = in1;
-        this.fileName2 = in2;
+        this.fName1 = in1;
+        this.fName2 = in2;
         this.c_out = c_out;
     }
 
     public void start() {
         try {
-            System.out.println("Come into Gamma....");
             Connector c1 = new Connector("input1");
-            ReadRelation r1 = new ReadRelation(fileName1, c1);
+            ReadRelation r1 = new ReadRelation(fName1, c1);
             r1.start();
  
             Connector[] split_bloom = ArrayConnectors.initConnectorArray("split_bloom");
@@ -50,7 +49,7 @@ public class Gamma extends ArrayConnectors {
             }
 
             Connector c2 = new Connector("input2");
-            ReadRelation r2 = new ReadRelation(fileName2, c2);
+            ReadRelation r2 = new ReadRelation(fName2, c2);
             r2.start();
 
             Connector[] split_filter = ArrayConnectors.initConnectorArray("split_filter");
