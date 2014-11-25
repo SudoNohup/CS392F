@@ -10,7 +10,7 @@ import gammaSupport.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class BFilter extends Thread {
     ReadEnd inM;

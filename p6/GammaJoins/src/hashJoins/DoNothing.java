@@ -10,7 +10,7 @@ import gammaSupport.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class DoNothing extends Thread {
     Connector c_in, c_out;

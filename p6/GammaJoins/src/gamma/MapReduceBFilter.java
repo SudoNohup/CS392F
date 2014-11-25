@@ -11,7 +11,7 @@ import hashJoins.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class MapReduceBFilter extends ArrayConnectors {
     
@@ -33,12 +33,14 @@ public class MapReduceBFilter extends ArrayConnectors {
         Connector mb3 = new Connector("mb3");
         Connector mb4 = new Connector("mb4");
         SplitM m1 = new SplitM(c_inM, mb1, mb2, mb3, mb4);
+        m1.start();
         
         Connector hb1 = new Connector("hb1");
         Connector hb2 = new Connector("hb2");
         Connector hb3 = new Connector("hb3");
         Connector hb4 = new Connector("hb4");
         HSplit h1 = new HSplit(keyNumber, c_in, hb1, hb2, hb3, hb4);
+        h1.start();
         
         Connector bmerge1 = new Connector("bmerge1");
         Connector bmerge2 = new Connector("bmerge2");
@@ -48,16 +50,12 @@ public class MapReduceBFilter extends ArrayConnectors {
         BFilter bf2 = new BFilter(mb2, hb2, bmerge2, keyNumber);
         BFilter bf3 = new BFilter(mb3, hb3, bmerge3, keyNumber);
         BFilter bf4 = new BFilter(mb4, hb4, bmerge4, keyNumber);
-
-        Merge m = new Merge(c_out, bmerge1, bmerge2, bmerge3, bmerge4);
-        
-        // Start all the threads.
-        m1.start();
-        h1.start();
         bf1.start();
         bf2.start();
         bf3.start();
         bf4.start();
+
+        Merge m = new Merge(c_out, bmerge1, bmerge2, bmerge3, bmerge4);      
         m.start();   
     }
     

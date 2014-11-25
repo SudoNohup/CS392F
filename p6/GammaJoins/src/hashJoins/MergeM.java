@@ -10,7 +10,7 @@ import gammaSupport.*;
 
 /**
  *
- * @author Jianyu
+ * @author Jianyu, Xiaohui
  */
 public class MergeM extends Thread {
     ReadEnd in[];
