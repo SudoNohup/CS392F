@@ -56,9 +56,14 @@ public class TestReadRelation {
     @Test
     public void testRead()
     {
-        RegTest.Utility.redirectStdOut("input/test/testRelation.txt");
+        RegTest.Utility.redirectStdOut("input/test/testReadRelation.txt");
         
         
+        
+        while(test_relation.getReadEnd().getRelation()==null)
+        {
+            
+        }
         Relation relation=test_relation.getReadEnd().getRelation();
         System.out.println(relation);
         
@@ -76,7 +81,7 @@ public class TestReadRelation {
         {
             e.printStackTrace();
         }
-        RegTest.Utility.validate("input/test/testRelation.txt", "input/test/testReadRelationResult.txt", false);
+        RegTest.Utility.validate("input/test/testReadRelation.txt", "input/test/testReadRelationResult.txt", false);
     }
    
     
