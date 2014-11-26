@@ -33,17 +33,17 @@ public class BloomSimulator extends Thread {
         Connector hash4 = new Connector("p4");
         HSplit h = new HSplit(keyNumber, c_in, hash1, hash2, hash3, hash4);
         
-        Sink s2 = new Sink(hash2);
-        Sink s3 = new Sink(hash3);
-        Sink s4 = new Sink(hash4);
+        //Sink s2 = new Sink(hash2);
+        //Sink s3 = new Sink(hash3);
+        //Sink s4 = new Sink(hash4);
 
         Connector out_sink = new Connector("out_sink");
         Bloom bloom = new Bloom(hash1, out_sink, c_outM, keyNumber);
         r.start();
         h.start();
-        s2.start();
-        s3.start();
-        s4.start();
+        //s2.start();
+        //s3.start();
+        //s4.start();
         bloom.start();
    
     }
