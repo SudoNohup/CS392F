@@ -5,7 +5,9 @@
  */
 
 import basicConnector.Connector;
+import basicConnector.ReadEnd;
 import gamma.Gamma;
+import gammaSupport.Tuple;
 import hashJoins.Print;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,14 +52,23 @@ public class TestGamma {
         Connector out = new Connector("output");
         Gamma h = new Gamma(0, "client", 0, "viewing", out);
         h.start();
-        Print p = new Print(out);
+        //Print p = new Print(out);
         
         RegTest.Utility.redirectStdOut("input/test/testGammaClientXViewing.txt");
-        p.start();
-        while(p.isAlive())
-        {
-            
-        }
+        Tuple tuple;
+        ReadEnd in=out.getReadEnd();
+         try{
+            while (true) {
+                tuple = in.getNextTuple();
+                if (tuple == null || tuple.toString().equals("1#null#")) {
+                    break;
+                }
+                System.out.println(tuple);
+            }
+         }catch(Exception e)
+         {
+             e.printStackTrace();
+         }
         RegTest.Utility.validate("input/test/testGammaClientXViewing.txt", "input/test/testGammaClientXViewingResult.txt", true);
     }
     
@@ -67,14 +78,28 @@ public class TestGamma {
         Connector out = new Connector("output");
         Gamma h = new Gamma(0, "orders", 0, "odetails", out);
         h.start();
-        Print p = new Print(out);
+        //Print p = new Print(out);
         
         RegTest.Utility.redirectStdOut("input/test/testOrdersXOdetails.txt");
-        p.start();
+       /* p.start();
         while(p.isAlive())
         {
             
-        }
+        } */
+         Tuple tuple;
+         ReadEnd in=out.getReadEnd();
+         try{
+            while (true) {
+                tuple = in.getNextTuple();
+                if (tuple == null || tuple.toString().equals("1#null#")) {
+                    break;
+                }
+                System.out.println(tuple);
+            }
+         }catch(Exception e)
+         {
+             e.printStackTrace();
+         }
         RegTest.Utility.validate("input/test/testOrdersXOdetails.txt", "input/test/testOrdersXOdetailsResult.txt", true);
     }
     
@@ -84,14 +109,23 @@ public class TestGamma {
         Connector out = new Connector("output");
         Gamma h = new Gamma(0, "parts", 1, "odetails", out);
         h.start();
-        Print p = new Print(out);
+        //Print p = new Print(out);
         
         RegTest.Utility.redirectStdOut("input/test/testPartsXOdetails.txt");
-        p.start();
-        while(p.isAlive())
-        {
-            
-        }
+        Tuple tuple;
+         ReadEnd in=out.getReadEnd();
+         try{
+            while (true) {
+                tuple = in.getNextTuple();
+                if (tuple == null || tuple.toString().equals("1#null#")) {
+                    break;
+                }
+                System.out.println(tuple);
+            }
+         }catch(Exception e)
+         {
+             e.printStackTrace();
+         }
         RegTest.Utility.validate("input/test/testPartsXOdetails.txt", "input/test/testPartsXOdetailsResult.txt", true);
     }
 }
